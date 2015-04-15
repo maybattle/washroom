@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Washroom", "Washroom\Washroom.csproj", "{75CF6F4F-E599-4D6A-BA87-185D6600F935}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Washroom.Tests", "Washroom.Tests\Washroom.Tests.csproj", "{19F2CF34-31B0-4F92-AA08-192993523C11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyncPortable", "LyncPortable\LyncPortable.csproj", "{96A487E5-454E-4340-BCE9-D05AFA62EB1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{75CF6F4F-E599-4D6A-BA87-185D6600F935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75CF6F4F-E599-4D6A-BA87-185D6600F935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75CF6F4F-E599-4D6A-BA87-185D6600F935}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19F2CF34-31B0-4F92-AA08-192993523C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19F2CF34-31B0-4F92-AA08-192993523C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19F2CF34-31B0-4F92-AA08-192993523C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19F2CF34-31B0-4F92-AA08-192993523C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96A487E5-454E-4340-BCE9-D05AFA62EB1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96A487E5-454E-4340-BCE9-D05AFA62EB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96A487E5-454E-4340-BCE9-D05AFA62EB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96A487E5-454E-4340-BCE9-D05AFA62EB1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
