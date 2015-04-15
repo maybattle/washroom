@@ -34,6 +34,7 @@ namespace LyncPortable
 
         private string PresenceLink { get; set; }
         private string ReportMyActivityLink { get; set; }
+        private string ApplicationsLink { get; set; }
 
         private HttpResponseMessage GetAsyncResult(string uri)
         {
@@ -147,13 +148,14 @@ namespace LyncPortable
                 if (createApplicationResultJson.IsSuccessStatusCode)
                 {
                     var createApplicationResult = JsonConvert.DeserializeObject<CreateApplicationResult>(createApplicationResultJson.Content.ReadAsStringAsync().Result);
+                    ApplicationsLink = createApplicationResult._links.self.href;
 
                     OnNotify(createApplicationResultJson.Content.ReadAsStringAsync().Result);
 
                     var makeMeAvailableUri = _rootUri + createApplicationResult._embedded.me._links.makeMeAvailable.href;
 
                     // wird benötigt, um den Status setzen zu können
-                    var makeMeAvailableResult = this.PostAsyncResult(makeMeAvailableUri, GetJsonStringContent(new MakeMeAvailableContent("", AvailabilityStatus.Online)));
+                    var makeMeAvailableResult = this.PostAsyncResult(makeMeAvailableUri, GetJsonStringContent(new MakeMeAvailableContent("", "Online")));
 
                     PresenceLink = _rootUri + createApplicationResult._embedded.me._links.self.href + "/presence";
                     ReportMyActivityLink = _rootUri + createApplicationResult._embedded.me._links.self.href + "/reportMyActivity";
@@ -169,7 +171,8 @@ namespace LyncPortable
 
         public void Dispose()
         {
-
+            var result = _httpClient.DeleteAsync(_rootUri + ApplicationsLink);
+            var test = result.Result.Content.ReadAsStringAsync();
         }
 
         internal class Discover
