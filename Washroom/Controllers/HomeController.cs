@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LyncPortable;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,26 +18,17 @@ namespace Washroom.Controllers
             return View();
         }
 
+
+        [HttpGet]
         public JsonResult GetStatus()
         {
-            //if (System.IO.File.Exists(Server.MapPath("~/flag.txt")))
-            //{
-            //    return Json(true);
-            //}
-            //else
-            //{
-            //    return Json(false);
-            //}
-            return null;
-      
+
+            using (var client = new LyncHttpClientPortable())
+            {
+                client.Init();
+
+                return Json(client.GetStatus(), JsonRequestBehavior.AllowGet);
+            }
         }
-
-        //[HttpGet]
-        //public ActionResult DisplayStatus()
-        //{
-        //    //StatusViewModel model = get
-
-        //    return View(model);
-        //}
     }
 }

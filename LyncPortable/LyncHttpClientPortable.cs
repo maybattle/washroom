@@ -7,7 +7,7 @@ using System.Text;
 
 namespace LyncPortable
 {
-    public class LyncHttpClientPortable
+    public class LyncHttpClientPortable : IDisposable
     {
         HttpClient _httpClient;
         public event Action<string> Notify;
@@ -163,6 +163,13 @@ namespace LyncPortable
             {
                 // hier gehts nicht mehr weiter :(
             }
+
+          
+        }
+
+        public void Dispose()
+        {
+
         }
 
         internal class Discover
